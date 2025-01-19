@@ -17,8 +17,14 @@ defineProps({
     type: String,
     default: '',
   },
-  title: String,
-  subtitle: String,
+  title: {
+    type: String,
+    default: '',
+  },
+  subtitle: {
+    type: String,
+    default: '',
+  },
 });
 
 defineEmits(['click']);
