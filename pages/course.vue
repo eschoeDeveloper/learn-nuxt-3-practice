@@ -16,6 +16,16 @@
                 {{ index + 1 }}. {{ course.title }}
               </q-item-section>
             </q-item>
+            <!-- NuxtLink는 CSR 에 의거하여 viewport가 노출되는 시점에 데이터를 로딩한다. -->
+            <!-- <NuxtLink v-slot="{ navigate }" custom to="/course/prefetching-1">
+              <q-item clickable @click="navigate">Prefetching Test 1</q-item>
+            </NuxtLink>
+            <NuxtLink v-slot="{ navigate }" custom to="/course/prefetching-2">
+              <q-item clickable @click="navigate">Prefetching Test 2</q-item>
+            </NuxtLink>
+            <NuxtLink v-slot="{ navigate }" custom to="/course/prefetching-3">
+              <q-item clickable @click="navigate">Prefetching Test 3</q-item>
+            </NuxtLink> -->
           </q-list>
         </q-card>
       </div>

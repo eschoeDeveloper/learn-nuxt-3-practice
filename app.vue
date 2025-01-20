@@ -1,7 +1,10 @@
 <template>
-  <NuxtLayout>
+  <NuxtLayout :name="layoutName">
     <NuxtPage />
   </NuxtLayout>
 </template>
+<script setup lang="ts">
+import type { LayoutKey } from '#build/types/layouts';
 
-<script setup lang="ts"></script>
+const layoutName = ref<LayoutKey>('default');
+</script>

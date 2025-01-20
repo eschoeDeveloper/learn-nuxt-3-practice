@@ -71,8 +71,9 @@
             label="이전 강의"
             color="primary"
             unelevated
-            :to="prevCourse.path"
+            @click="movePage(prevCourse.path)"
           />
+          <!--:to="prevCourse.path"-->
           <q-space />
           <q-btn
             label="쿼리 추가"
@@ -85,8 +86,9 @@
             label="다음 강의"
             color="primary"
             unelevated
-            :to="nextCourse.path"
+            @click="movePage(nextCourse.path)"
           />
+          <!--:to="nextCourse.path"-->
         </ClientOnly>
       </template>
     </AppCard>
@@ -107,6 +109,10 @@ definePageMeta({
   keepalive: true,
   alias: ['/lecture/:courseSlug'],
 });
+
+const movePage = async (path: string) => {
+  await navigateTo(path);
+};
 </script>
 
 <style scoped></style>
