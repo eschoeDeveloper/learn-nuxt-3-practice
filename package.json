@@ -13,10 +13,13 @@
     "lint-prettier": "prettier --write \"**/*.(ts|tsx|vue|js|json)\""
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^9.1.1",
     "@quasar/extras": "^1.16.12",
+    "netlify": "^13.3.2",
     "nuxt": "^3.12.4",
     "quasar": "^2.16.9",
-    "vue": "latest"
+    "vue": "latest",
+    "vue-i18n": "^11.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
