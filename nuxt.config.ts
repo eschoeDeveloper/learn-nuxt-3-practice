@@ -22,6 +22,12 @@ export default defineNuxtConfig({
 
   quasar: {
     /* */
+    plugins: ['Notify'],
+    config: {
+      notify: {
+        position: 'top-right',
+      },
+    },
   },
 
   imports: {},

@@ -3,9 +3,8 @@
     <div class="row q-col-gutter-md">
       <div class="col-3">
         <q-card>
-          <q-item-label header
-            >강의 로드맵 {{ $hello('gymcoding') }}</q-item-label
-          >
+          <q-item-label header>강의 로드맵</q-item-label>
+          <!--{{ $hello('gymcoding') }}-->
           <q-list bordered separator>
             <q-item
               v-for="(course, index) in courses"
@@ -17,6 +16,9 @@
               <q-item-section>
                 {{ index + 1 }}. {{ course.title }}
               </q-item-section>
+            </q-item>
+            <q-item v-ripple clickable :to="'/course/empty'">
+              <q-item-selection> Empty Course (throw error) </q-item-selection>
             </q-item>
             <!-- NuxtLink는 CSR 에 의거하여 viewport가 노출되는 시점에 데이터를 로딩한다. -->
             <!-- <NuxtLink v-slot="{ navigate }" custom to="/course/prefetching-1">
@@ -32,7 +34,20 @@
         </q-card>
       </div>
       <div class="col">
-        <NuxtPage />
+        <NuxtErrorBoundary>
+          <NuxtPage />
+          <template #error="{ error }">
+            <div class="flex flex-center column q-py-xl">
+              <div class="text-h6 q-mb-lg">{{ error }}</div>
+              <q-btn
+                label="돌아가기"
+                color="positive"
+                no-caps
+                @click="error.value = null"
+              />
+            </div>
+          </template>
+        </NuxtErrorBoundary>
       </div>
     </div>
   </q-page>
@@ -41,7 +56,7 @@
 <script setup lang="ts">
 const { courses } = useCourses();
 // 2] 구조분해할당
-const nuxtApp = useNuxtApp();
-const { $hello } = nuxtApp;
+// const nuxtApp = useNuxtApp();
+// const { $hello } = nuxtApp;
 // console.log('$hello: ', $hello('gymcoding2'));
 </script>
