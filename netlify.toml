@@ -1,12 +1,12 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://eschoedeveloper.netlify.app/api/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/auth/*"
-  to = "https://eschoedeveloper.netlify.app/auth/:splat"
+  to = "/.netlify/functions/auth/:splat"
   status = 200
   force = true
 
