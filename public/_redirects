@@ -1,3 +1,3 @@
-/api/*  https://*.netlify.app/api/:splat  200
-/auth/* https://*.netlify.app/auth/:splat  200
+/api/*  https://*.netlify.app/:splat  200
+/auth/* https://*.netlify.app/:splat  200
 /* /index.html 200
