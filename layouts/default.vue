@@ -75,8 +75,14 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-const { authUser, isAuthenticated } = useAuthUser();
-const { signOut } = useAuth();
+
+// const authUser = useAuthUser();
+// const isAuthenticated = useAuthenticated();
+
+// const { signOut } = useAuth();
+const authStore = useAuthStore();
+const { user: authUser, isAuthenticated } = storeToRefs(authStore);
+const { signOut } = authStore;
 const pageContainerStyle = computed(() => ({
   maxWidth: '1080px',
   margin: '0 auto',
@@ -93,4 +99,6 @@ const switchLocalePath = useSwitchLocalePath();
 const currentLanguageLabel = computed(() => {
   return locale.value === 'en' ? 'English' : '한국어';
 });
+
+watch(locale, (value) => (useCookie('locale').value = value));
 </script>

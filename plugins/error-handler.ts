@@ -4,10 +4,14 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.hook('vue:error', (err) => {
     // console.log('error');
     if (err instanceof Error) {
-      Notify.create({
-        message: err.message,
-        type: 'negative',
-      });
+      if (process.client) {
+        Notify.create({
+          message: err.message,
+          type: 'negative',
+        });
+      } else {
+        console.log('error: ', err.message);
+      }
     }
   });
 });

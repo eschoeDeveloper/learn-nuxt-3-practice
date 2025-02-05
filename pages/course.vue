@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-const { courses } = useCourses();
+const { courses } = await useCourses();
 // 2] 구조분해할당
 // const nuxtApp = useNuxtApp();
 // const { $hello } = nuxtApp;

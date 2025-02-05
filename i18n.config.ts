@@ -1,7 +1,9 @@
+const locale = useDefaultLocale();
+
 export default defineI18nConfig(() => ({
   legacy: false,
   globalInjection: true,
-  locale: 'en',
+  locale: locale.value,
   messages: {
     en: {
       home: 'Home',

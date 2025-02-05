@@ -30,3 +30,9 @@ export interface CourseWithPath
   reviewsCount: string;
   studentCount: string;
 }
+
+export interface CourseReturn {
+  course: Maybe<CourseWithPath>;
+  prevCourse: Maybe<CourseWithPath>;
+  nextCourse: Maybe<CourseWithPath>;
+}

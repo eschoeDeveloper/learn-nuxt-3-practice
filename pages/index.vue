@@ -28,5 +28,5 @@
 <script setup lang="ts">
 import PageTitle from '~/components/PageTitle.vue';
 
-const { courses } = useCourses();
+const { courses } = await useCourses();
 </script>

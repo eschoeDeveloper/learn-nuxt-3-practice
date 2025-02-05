@@ -10,8 +10,10 @@
 </template>
 
 <script setup lang="ts">
+import adminOnly from '~/middleware/admin-only';
 definePageMeta({
   layout: 'admin',
+  middleware: [adminOnly],
 });
 </script>
 

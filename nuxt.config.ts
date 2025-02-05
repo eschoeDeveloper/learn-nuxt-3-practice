@@ -7,7 +7,12 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
 
-  modules: ['nuxt-quasar-ui', '@nuxtjs/i18n'],
+  modules: [
+    'nuxt-quasar-ui',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+  ],
 
   i18n: {
     locales: ['en', 'ko'], // URL 경로 접두사에 사용됨

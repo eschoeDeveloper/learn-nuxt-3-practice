@@ -11,8 +11,13 @@
 </template>
 
 <script setup lang="ts">
+import guestOnly from '~/middleware/guest-only';
+definePageMeta({
+  middleware: [guestOnly],
+});
 const handleLoginSuccess = async () => {
-  const { isAdmin } = useAuthUser();
+  // const isAdmin = useAdmin();
+  const { isAdmin } = storeToRefs(useAuthStore());
   const redirect = isAdmin.value ? '/admin' : '/';
   await navigateTo(redirect);
 };
