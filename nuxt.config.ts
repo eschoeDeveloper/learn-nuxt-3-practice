@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
-  nitro: {
-    preset: 'netlify',
-  },
+  // nitro: {
+  //   preset: 'netlify',
+  // },
   // routeRules: {
   //   '/api/*': { prerender: true },
   //   '/auth/*': { prerender: true },
