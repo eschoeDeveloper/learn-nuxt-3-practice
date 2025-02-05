@@ -1,12 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  ssr: false,
+  nitro: {
+    preset: 'netlify',
+  },
   routeRules: {
     '/api/*': { prerender: true },
     '/auth/*': { prerender: true },
   },
-
   typescript: {
     shim: false,
     typeCheck: true,
