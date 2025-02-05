@@ -10,6 +10,8 @@ import type { CourseReturn } from '~/types/course';
 export const useCourse = async (courseSlug: string): Promise<CourseReturn> => {
   const { data, error } = await useFetch(`/api/course/${courseSlug}`);
 
+  if (!data.value) return {} as CourseReturn;
+
   if (error.value) {
     throw createError({
       ...error.value,

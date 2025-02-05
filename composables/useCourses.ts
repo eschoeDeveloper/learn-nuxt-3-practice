@@ -7,6 +7,8 @@ interface CoursesReturn {
 export const useCourses = async (): Promise<CoursesReturn> => {
   const { data, error } = await useFetch('/api/course');
 
+  if (!data.value) return { courses: [] as CourseWithPath[] };
+
   if (error.value) {
     throw createError({
       ...error.value,

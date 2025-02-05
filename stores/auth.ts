@@ -36,7 +36,9 @@ export const useAuthStore = defineStore(
       const data = await $fetch<{ user: UserWithoutPassword }>('/auth/user', {
         headers: useRequestHeaders(['cookie']),
       });
-      setUser(data.user);
+
+      if (!data.user) setUser(null);
+      else setUser(data.user);
     };
 
     return {
