@@ -5,10 +5,10 @@ export default defineNuxtConfig({
   // nitro: {
   //   preset: 'netlify',
   // },
-  routeRules: {
-    '/api/*': { prerender: true },
-    '/auth/*': { prerender: true },
-  },
+  // routeRules: {
+  //   '/api/*': { prerender: true },
+  //   '/auth/*': { prerender: true },
+  // },
   typescript: {
     shim: false,
     typeCheck: true,
