@@ -1,12 +1,16 @@
+[build]
+  command = "CI= npm run build"
+  functions = "netlify/functions/" # Netlify 서버리스 함수가 작성된 디렉토리를 지정합니다.
+
 [[redirects]]
   from = "/api/*"
-  to = "https://eschoedeveloper.netlify.app/:splat"
+  to = "/netlify/functions/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/auth/*"
-  to = "https://eschoedeveloper.netlify.app/:splat"
+  to = "/netlify/functions/:splat"
   status = 200
   force = true
 
