@@ -2,18 +2,6 @@
   command = "CI= npm run build"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/auth/*"
-  to = "/.netlify/functions/server"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
